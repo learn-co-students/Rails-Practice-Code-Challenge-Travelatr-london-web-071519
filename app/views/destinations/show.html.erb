@@ -1,0 +1,9 @@
+<h1><%= @destination.name %><h1>
+<h2><%= @destination.country %><h2>
+<% @destination.posts.max(5).each do |p| %>
+<br>
+<h3><%= p.title %><h3>
+<h3><%= p.content %><h3>
+<h3><%= p.likes %><h3>
+<h3><%= p.blogger.name %><h3>
+<% end %>
