@@ -1,0 +1,18 @@
+<%= form_for @post do |f| %>
+<div>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br>
+<br>
+<%= f.label :likes %>
+<%= f.text_field :likes %>
+<br>
+<br>
+<%= f.label :content %>
+<%= f.text_field :content %>
+</div>
+<br>
+<%= f.collection_select :destination_id, Destination.all, :id, :name%>
+<%= f.collection_select :blogger_id, Blogger.all, :id, :name%>
+<%= f.submit %>
+<% end %>
