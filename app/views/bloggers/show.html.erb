@@ -1,0 +1,17 @@
+<h1> <%= @blogger.name %>'s Blogger Page </h1>
+
+ <% @blogger.posts.each do |post| %> 
+    
+    <%= post.title  %> has <%= post.likes %> likes <br><br>
+ <% end %>
+
+<% featured_post = @blogger.featured_post %>
+<h3> Featured post: <%= link_to featured_post.title, post_path(featured_post) %>  </h3>
+
+<br><br>
+<h3> Top 5 destinations: </h3> <br>
+<% @blogger.top_5_destinations.each do |destination| %>
+<%= destination.name %> <br>
+<% end %>
+
+ 

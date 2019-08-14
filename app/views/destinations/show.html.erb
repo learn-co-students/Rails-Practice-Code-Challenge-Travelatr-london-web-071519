@@ -1,0 +1,17 @@
+<h1> <%= @destination.name %> </h1>
+
+<p>
+The most recent 5 posts written about this destination: <br><br>
+<% @destination.most_recent_five_posts.each do |post| %>
+<%= post.title %> <br> 
+<% end %>
+
+<br>
+
+Featured post: <br>
+<%= link_to @destination.featured_post.title, post_path(@destination.featured_post) %>
+
+<br><br>
+Average age of bloggers who have written about this destination: <br>
+<%= @destination.average_blogger_age %>
+</p>
