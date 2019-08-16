@@ -1,0 +1,13 @@
+<h1> Post Show Page</h1>
+
+
+<h3> Post title: <%= @post.title  %></h3>
+<h3> Content: <%= @post.content  %></h3>
+
+<%= link_to @post.destination.name, destination_path(@post.destination) %>
+<br><br>
+<%= form_tag like_post_path(@post), method: :post do %>
+ <%= submit_tag "Like" %>
+<% end %>
+
+
